@@ -78,6 +78,7 @@ Things you may want to cover:
 | --------------- | --------- | ----------------------------- |
 | postal code     | string    | null:false                    |
 | municipalities  | string    | null:false                    |
+| prefectures     | integer   | null:false                    |
 | address         | string    | null:false                    |
 | building_name   | string    |                               |
 | phone_number    | string    | null:false                    |
