@@ -45,30 +45,21 @@ Things you may want to cover:
 
 ## items　テーブル　商品
 
-| Column            | Type      | Options                       |
-| ----------------- | --------- | ----------------------------- |
-| name              | string    | null:false                    |
-| comment           | text      | null:false                    |
-| price             | integer   | null:false                    |
-| user              | references| null:false, foreign_key: true |
+| Column              | Type      | Options                       |
+| ------------------- | --------- | ----------------------------- |
+| name                | string    | null:false                    |
+| comment             | text      | null:false                    |
+| price               | integer   | null:false                    |
+| user                | references| null:false, foreign_key: true |
+| status              | integer   | null:false                    |
+| category            | integer   | null:false                    |
+| delivery_fee        | integer   | null:false                    |
+| area_of_delivery    | integer   | null:false                    |
+| days_until_shipping | integer   | null:false                    |
 
 ### Association
 - belongs_to :user
 - has_one    :purchase
-- has_one    :items_statuses
-
-## items_status　テーブル 配送元情報など
-| Column              | Type      | Options                       |
-| ------------------- | --------- | ----------------------------- |
-| status              | string    | null:false                    |
-| category            | text      | null:false                    |
-| delivery_fee        | integer   | null:false                    |
-| area_of_delivery    | string    | null:false                    |
-| days_until_shipping | string    | null:false                    |
-
-
-### Association
-- belongs_to :item
 
 ##　purchases　テーブル 購入
 | Column          | Type      | Options                       |
