@@ -45,17 +45,17 @@ Things you may want to cover:
 
 ## items　テーブル　商品
 
-| Column              | Type      | Options                       |
-| ------------------- | --------- | ----------------------------- |
-| name                | string    | null:false                    |
-| comment             | text      | null:false                    |
-| price               | integer   | null:false                    |
-| user                | references| null:false, foreign_key: true |
-| status              | integer   | null:false                    |
-| category            | integer   | null:false                    |
-| delivery_fee        | integer   | null:false                    |
-| area_of_delivery    | integer   | null:false                    |
-| days_until_shipping | integer   | null:false                    |
+| Column                 | Type      | Options                       |
+| ---------------------- | --------- | ----------------------------- |
+| name                   | string    | null:false                    |
+| comment                | text      | null:false                    |
+| price                  | integer   | null:false                    |
+| user                   | references| null:false, foreign_key: true |
+| status_id              | integer   | null:false                    |
+| category_id            | integer   | null:false                    |
+| delivery_fee_id        | integer   | null:false                    |
+| area_of_delivery_id    | integer   | null:false                    |
+| days_until_shipping_id | integer   | null:false                    |
 
 ### Association
 - belongs_to :user
@@ -78,7 +78,7 @@ Things you may want to cover:
 | --------------- | --------- | ----------------------------- |
 | postal code     | string    | null:false                    |
 | municipalities  | string    | null:false                    |
-| prefectures     | integer   | null:false                    |
+| prefectures_id  | integer   | null:false                    |
 | address         | string    | null:false                    |
 | building_name   | string    |                               |
 | phone_number    | string    | null:false                    |
