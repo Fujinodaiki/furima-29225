@@ -25,58 +25,56 @@ Things you may want to cover:
 
 ## users テーブル　
 
-| Column    | Type   | Options   |
-| --------- | ------ | --------- |
-| nickname  | string | null:false|
-| email     | string | null:false|
-| password  | string | null:false|
-| name      | string | null:false|
-| name kana | string | null:false|
+| Column                 | Type   | Options   |
+| ---------------------- | ------ | --------- |
+| nickname               | string | null:false|
+| email                  | string | null:false|
+| password               | string | null:false|
+| password_confirmation  | string | null:false|
+| family_name            | string | null:false|
+| last_name              | string | null:false|
+| family_name_kana       | string | null:false|
+| last_name_kana         | string | null:false|
+
 
 ### Association
 
-- has_many :item
-- has_many :purchase
+- has_many :items
+- has_many :purchases
 
 ## items　テーブル　商品
 
-| Column            | Type   | Options   |
-| ----------------- | ------ | --------- |
-| name              | string | null:false|
-| comment           | text   | null:false|
-| category          | string | null:false|
-| status            | string | null:false|
-| delivery fee      | string | null:false|
-| area of delivery  | string | null:false|
-| days unil delivery| integer| null:false|
-| price             | integer| null:false|
-| users_id          | string | null:false|
+| Column            | Type      | Options                       |
+| ----------------- | --------- | ----------------------------- |
+| name              | string    | null:false                    |
+| comment           | text      | null:false                    |
+| price             | integer   | null:false                    |
+| users_id          | references| null:false, foreign_key: true |
 
 ### Association
 - belongs_to :user
-- has_one    :purchase
+- belongs_to :purchase
 
 ##　purchases　テーブル 購入
-| Column          | Type   | Options   |
-| --------------- | ------ | --------- |
-| credit card     | string | null:false|
-| expiration date | string | null:false|
-| security        | string | null:false|
-| users_id        | string | null:false|
-| items_id        | string | null:false|
+| Column          | Type      | Options                       |
+| --------------- | --------- | ----------------------------- |
+| users_id        | references| null:false, foreign_key: true |
+| item_id         | references| null:false, foreign_key: true |
 
 ### Association
 - belongs_to :user
-- belongs_to :item
-- has_one    :sippingaddres
+- has_many   :items
+- has_one    :shippingaddress
 
-## sippingaddres テーブル　配送先
+## shippingaddress テーブル　配送先
 
 | Column          | Type   | Options   |
 | --------------- | ------ | --------- |
 | postal code     | string | null:false|
-| prefectures     | string | null:false|
 | municipalities  | string | null:false|
+| address          | string | null:false|
+| building_name   | string |           |
+| phone_number    | string | null:false|
 
 ### Association
 belongs_to :purchase
