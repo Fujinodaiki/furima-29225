@@ -54,7 +54,7 @@ Things you may want to cover:
 
 ### Association
 - belongs_to :user
-- belongs_to :purchase
+- has_one    :purchase
 - has_one    :items_statuses
 
 ## items_status　テーブル 配送元情報など
@@ -76,18 +76,19 @@ Things you may want to cover:
 
 ### Association
 - belongs_to :user
-- has_many   :items
+- belongs    :item
 - has_one    :shippingaddress
 
 ## shippingaddress テーブル　配送先
 
-| Column          | Type   | Options   |
-| --------------- | ------ | --------- |
-| postal code     | string | null:false|
-| municipalities  | string | null:false|
-| address         | string | null:false|
-| building_name   | string |           |
-| phone_number    | string | null:false|
+| Column          | Type      | Options                       |
+| --------------- | --------- | ----------------------------- |
+| postal code     | string    | null:false                    |
+| municipalities  | string    | null:false                    |
+| address         | string    | null:false                    |
+| building_name   | string    |                               |
+| phone_number    | string    | null:false                    |
+| purchase_id     | references| null:false, foreign_key: true |
 
 ### Association
 belongs_to :purchase
