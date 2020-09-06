@@ -58,12 +58,14 @@ Things you may want to cover:
 - has_one    :items_statuses
 
 ## items_status　テーブル 配送元情報など
-| Column            | Type      | Options                       |
-| ----------------- | --------- | ----------------------------- |
-| status            | string    | null:false                    |
-| category          | text      | null:false                    |
-| delivery_fee      | integer   | null:false                    |
-| area_of_delivery  | string    | null:false                    |
+| Column              | Type      | Options                       |
+| ------------------- | --------- | ----------------------------- |
+| status              | string    | null:false                    |
+| category            | text      | null:false                    |
+| delivery_fee        | integer   | null:false                    |
+| area_of_delivery    | string    | null:false                    |
+| days_until_shipping | string    | null:false                    |
+
 
 ### Association
 - belongs_to :item
