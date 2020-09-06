@@ -50,7 +50,7 @@ Things you may want to cover:
 | name              | string    | null:false                    |
 | comment           | text      | null:false                    |
 | price             | integer   | null:false                    |
-| users_id          | references| null:false, foreign_key: true |
+| user              | references| null:false, foreign_key: true |
 
 ### Association
 - belongs_to :user
@@ -71,8 +71,8 @@ Things you may want to cover:
 ##　purchases　テーブル 購入
 | Column          | Type      | Options                       |
 | --------------- | --------- | ----------------------------- |
-| users_id        | references| null:false, foreign_key: true |
-| item_id         | references| null:false, foreign_key: true |
+| user            | references| null:false, foreign_key: true |
+| item            | references| null:false, foreign_key: true |
 
 ### Association
 - belongs_to :user
@@ -85,7 +85,7 @@ Things you may want to cover:
 | --------------- | ------ | --------- |
 | postal code     | string | null:false|
 | municipalities  | string | null:false|
-| address          | string | null:false|
+| address         | string | null:false|
 | building_name   | string |           |
 | phone_number    | string | null:false|
 
