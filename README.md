@@ -23,7 +23,7 @@ Things you may want to cover:
 
 * ...
 
-## users テーブル　
+## users テーブル
 
 | Column                 | Type   | Options   |
 | ---------------------- | ------ | --------- |
@@ -43,7 +43,7 @@ Things you may want to cover:
 - has_many :items
 - has_many :purchases
 
-## items　テーブル　商品
+## items テーブル 商品
 
 | Column                 | Type      | Options                       |
 | ---------------------- | --------- | ----------------------------- |
@@ -61,7 +61,7 @@ Things you may want to cover:
 - belongs_to :user
 - has_one    :purchase
 
-##　purchases　テーブル 購入
+## purchases テーブル 購入
 | Column          | Type      | Options                       |
 | --------------- | --------- | ----------------------------- |
 | user            | references| null:false, foreign_key: true |
@@ -72,7 +72,7 @@ Things you may want to cover:
 - belongs_to :item
 - has_one    :shippingaddress
 
-## shippingaddress テーブル　配送先
+## shippingaddress テーブル 配送先
 
 | Column          | Type      | Options                       |
 | --------------- | --------- | ----------------------------- |
