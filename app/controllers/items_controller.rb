@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   before_action :move_to_sign_up, except: [:index]
 
   def index
+    @item =Item.includes(:user) #n+1問題の解消
   end
 
   def new
