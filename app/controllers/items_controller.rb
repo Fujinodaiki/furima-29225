@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
   before_action :move_to_sign_up, except: [:index]
 
   def index
-    @item =Item.includes(:user) #n+1問題の解消
+    @item = Item.includes(:user) # n+1問題の解消
   end
 
   def new
@@ -25,6 +25,6 @@ class ItemsController < ApplicationController
   end
 
   def move_to_sign_up
-    redirect_to new_user_registration_path  unless user_signed_in?
+    redirect_to new_user_registration_path unless user_signed_in?
   end
 end
