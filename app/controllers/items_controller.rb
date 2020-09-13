@@ -1,8 +1,8 @@
 class ItemsController < ApplicationController
-  before_action :move_to_sign_up, except: [:index,:show]
+  before_action :move_to_sign_up, except: [:index, :show]
 
   def index
-    @item = Item.includes(:user).order("created_at DESC") # n+1問題の解消
+    @item = Item.includes(:user).order('created_at DESC') # n+1問題の解消
   end
 
   def new
@@ -19,7 +19,7 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item =Item.find(params[:id])
+    @item = Item.find(params[:id])
   end
 
   private
