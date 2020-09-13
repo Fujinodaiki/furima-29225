@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :move_to_sign_up, except: [:index]
+  before_action :move_to_sign_up, except: [:index,:show]
 
   def index
     @item = Item.includes(:user).order("created_at DESC") # n+1問題の解消
@@ -16,6 +16,9 @@ class ItemsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
   end
 
   private
