@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :move_to_sign_up, except: [:index, :show]
-  before_action :set_item, only: [:show, :edit]
+  before_action :set_item, only: [:show, :edit, :update]
 
   def index
     @item = Item.includes(:user).order('created_at DESC') # n+1問題の解消
@@ -27,8 +27,7 @@ class ItemsController < ApplicationController
   end
 
   def update
-    item = Item.find(params[:id])
-    if item.update(item_params)
+    if @item.update(item_params)
       redirect_to item_path
     else
       render :edit
