@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :move_to_sign_up, except: [:index, :show]
-  before_action :set_item, only: [:show, :edit, :update,:destroy]
+  before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
     @item = Item.includes(:user).order('created_at DESC') # n+1問題の解消
@@ -39,8 +39,6 @@ class ItemsController < ApplicationController
     redirect_to root_path
   end
 
-
-
   private
 
   def item_params
@@ -54,5 +52,4 @@ class ItemsController < ApplicationController
   def set_item
     @item = Item.find(params[:id])
   end
-
 end
