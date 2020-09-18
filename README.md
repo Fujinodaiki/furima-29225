@@ -61,7 +61,7 @@ Things you may want to cover:
 - belongs_to :user
 - has_one    :purchase
 
-## orders テーブル 購入
+## purchases テーブル 購入
 | Column          | Type      | Options                       |
 | --------------- | --------- | ----------------------------- |
 | user            | references| null:false, foreign_key: true |
@@ -70,19 +70,19 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 - belongs_to :item
-- has_one    :shippingaddres
+- has_one    :shippingaddress
 
-## shippingaddres テーブル 配送先
+## shippingaddress テーブル 配送先
 
-| Column             | Type      | Options                       |
-| ------------------ | --------- | ----------------------------- |
-| postalcode         | string    | null:false                    |
-| municipalities     | string    | null:false                    |
-| areaobdelivery_id  | integer   | null:false                    |
-| address            | string    | null:false                    |
-| buildingname       | string    |                               |
-| phonenumber        | string    | null:false                    |
-| order              | references| null:false, foreign_key: true |
+| Column          | Type      | Options                       |
+| --------------- | --------- | ----------------------------- |
+| postal_code     | string    | null:false                    |
+| municipalities  | string    | null:false                    |
+| prefectures_id  | integer   | null:false                    |
+| address         | string    | null:false                    |
+| building_name   | string    |                               |
+| phone_number    | string    | null:false                    |
+| purchase        | references| null:false, foreign_key: true |
 
 ### Association
-belongs_to :order
+belongs_to :purchase
