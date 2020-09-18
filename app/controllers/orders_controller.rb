@@ -1,10 +1,7 @@
 class OrdersController < ApplicationController
-  before_action :authenticate_user!
-  before_action :move_to_root
-
   def index
-    @item = Item.find(params[:item_id])
     @itemshipping = ItemShipping.new
+    @item = Item.find(params[:item_id])
   end
 
   def create
@@ -33,13 +30,6 @@ class OrdersController < ApplicationController
       card: params[:token],
       currency: 'jpy'
     )
-  end
-
-  def move_to_root
-    @item = Item.find(params[:item_id])
-    if  current_user.id == @item.user_id || @item.order.present? 
-      redirect_to root_path
-    end
   end
 
 end
