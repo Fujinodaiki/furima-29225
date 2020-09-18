@@ -4,10 +4,6 @@ class OrdersController < ApplicationController
     @item = Item.find(params[:item_id])
   end
 
-  # def new
-  #   @itemshipping = ItemSgipping.new
-  # end
-
   def create
     @itemshipping = ItemShipping.new(order_params)
     if @itemshipping.valid?
@@ -18,7 +14,8 @@ class OrdersController < ApplicationController
       render 'index'
     end
   end
-  
+
+
   private
 
   def order_params
