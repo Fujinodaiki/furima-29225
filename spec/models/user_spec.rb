@@ -7,7 +7,7 @@ RSpec.describe User, type: :model do
 
   describe 'ユーザー新規登録' do
     context '新規登録ができるとき' do
-      it 'nicname,email,password,password_confirmation,family_name,last_name.family_name_kana,last_name_kanaが存在しているとき' do
+      it 'nickname,email,password,password_confirmation,family_name,last_name.family_name_kana,last_name_kanaが存在しているとき' do
         expect(@user).to be_valid
       end
     end
@@ -75,22 +75,22 @@ RSpec.describe User, type: :model do
       it 'family_name_kanaが空のとき' do
         @user.family_name_kana = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("Family name kana can't be blank", 'Family name kana 全角文字を使用してください')
+        expect(@user.errors.full_messages).to include("Family name kana can't be blank", 'Family name kana 全角カタカナ文字を使用してください')
       end
-      it 'family_name_kanaが全角ではないとき' do
+      it 'family_name_kanaが全角カタカナではないとき' do
         @user.family_name_kana = 'yamada'
         @user.valid?
-        expect(@user.errors.full_messages).to include('Family name kana 全角文字を使用してください')
+        expect(@user.errors.full_messages).to include('Family name kana 全角カタカナ文字を使用してください')
       end
       it 'last_name_kanaが空のとき' do
         @user.last_name_kana = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("Last name kana can't be blank", 'Last name kana 全角文字を使用してください')
+        expect(@user.errors.full_messages).to include("Last name kana can't be blank", 'Last name kana 全角カタカナ文字を使用してください')
       end
-      it 'last_name_kanaが全角ではないとき' do
+      it 'last_name_kanaが全角カタカナではないとき' do
         @user.last_name_kana = 'rikutarou'
         @user.valid?
-        expect(@user.errors.full_messages).to include('Last name kana 全角文字を使用してください')
+        expect(@user.errors.full_messages).to include('Last name kana 全角カタカナ文字を使用してください')
       end
       it 'birthdayが空のとき' do
         @user.birthday = ''
